@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import HistoryChart from "../components/HistoryChart";
 import CoinData from "../components/CoinData";
 import coinGecko from "../apis/coinGecko";
@@ -64,10 +65,10 @@ function ExplorerItem(props) {
       return <div>Loading....</div>;
     }
     return (
-      <div className="explorer-item">
+      <Link to={`/coins/${props.name}`} className="explorer-item">
         <HistoryChart data={coinData} />
         <CoinData data={coinData.detail} />
-      </div>
+      </Link>
     );
   };
 
