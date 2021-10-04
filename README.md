@@ -1,0 +1,1 @@
+fantom cryptocurrency tracker
