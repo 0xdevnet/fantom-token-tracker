@@ -5,7 +5,7 @@ export const WatchListContext = createContext();
 export const WatchListContextProvider = (props) => {
   console.log();
   const [watchList, setWatchList] = useState(
-    localStorage.getItem("watchList")?.split(",") || [
+    [
       "fantom",
       "fantom-oasis",
       "spookyswap",
