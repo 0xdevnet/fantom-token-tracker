@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import HistoryChart from "../components/HistoryChart";
 import CoinData from "../components/CoinData";
 import coinGecko from "../apis/coinGecko";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 function ExplorerItem(props) {
   const [coinData, setCoinData] = useState({});
@@ -60,19 +62,25 @@ function ExplorerItem(props) {
     fetchData();
   }, []);
 
+  // const notify = () => toast("Wow so easy!");
+
   const renderData = () => {
     if (isLoading) {
-      return <div>Loading....</div>;
+      return <div></div>;
     }
     return (
-      <Link to={`/coins/${props.name}`} className="explorer-item">
+      <div to={`/coins/${props.name}`} className="explorer-item">
         <HistoryChart data={coinData} />
-        <CoinData data={coinData.detail} />
-      </Link>
+        {/* <button onClick={notify}>Notify!</button>
+        <ToastContainer /> */}
+        <Link to={`/coins/${props.name}`}>
+          <CoinData data={coinData.detail} />
+        </Link>
+      </div>
     );
   };
 
   return renderData();
-};
+}
 
 export default ExplorerItem;

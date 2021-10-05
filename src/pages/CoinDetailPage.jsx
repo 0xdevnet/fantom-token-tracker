@@ -65,7 +65,7 @@ const CoinDetailPage = () => {
 
   const renderData = () => {
     if (isLoading) {
-      return <div>Loading....</div>;
+      return <div></div>;
     }
     return (
       <div className="coinlist">
